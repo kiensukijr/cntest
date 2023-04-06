@@ -1,12 +1,25 @@
-import Review from "../models/Review.js";
+import { getDb } from '../index.js';
+import { ObjectId } from 'mongodb';
+
+const getReviewsColelction = () => {
+    return getDb().collection('reviews');
+}
 
 //CREATE
 export const createReview = async (req, res) => {
     if (req.user.isAdmin) {
+        const {
+            name,
+            desc
+        } = req.body;
         try {
-            const newReview = new Review(req.body);
-            const savedReview = await newReview.save();
-            res.status(201).json(savedReview);
+            await getReviewsColelction().insertOne(
+                {
+                    name: name,
+                    desc: desc
+                }
+            )
+            res.status(201).json({ msg: "Saved successfully" });
         } catch (err) {
             res.status(500).json(err);
         }
@@ -19,7 +32,7 @@ export const createReview = async (req, res) => {
 export const getAllReviews = async (req, res) => {
     if (req.user.isAdmin) {
         try {
-            const reviews = await Review.find();
+            const reviews = await getReviewsColelction().find().toArray();
             res.status(200).json(reviews);
         } catch (err) {
             res.status(500).json(err);
@@ -32,7 +45,7 @@ export const getAllReviews = async (req, res) => {
 //READ RANDOM REVIEWS
 export const getRandomReviews = async (req, res) => {
     try {
-        const reviews = await Review.aggregate([
+        const reviews = await getRandomReviews().aggregate([
             { $sample: { size: 5 }},
         ])
         res.status(200).json(reviews);
@@ -44,15 +57,25 @@ export const getRandomReviews = async (req, res) => {
 //UPDATE 
 export const updateReview = async (req, res) => {
     if (req.user.isAdmin) {
+        const {
+            name,
+            desc,
+        } = req.body;
         try {
-            const updatedReview = await Review.findByIdAndUpdate(req.params.id, {
-                $set: req.body,
-            }, {
-                new: true,
-            });
-            res.status(200).json(updatedReview);
+            await getFoodsColelction().updateOne(
+                {
+                    _id: new ObjectId(req.params.id)
+                },
+                {
+                    $set: {
+                        name: name,
+                        desc: desc,
+                    }
+                }
+            );
+            res.status(200).json({ msg: "Updated successfully"});
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).json(err)
         }
     } else {
         res.status(403).json('Access Denied')
@@ -63,7 +86,11 @@ export const updateReview = async (req, res) => {
 export const deleteReview = async (req, res) => {
     if (req.user.isAdmin) {
         try {
-            await Review.findByIdAndDelete(req.params.id);
+            await getReviewsColelction().deleteOne(
+                {
+                    _id: new ObjectId(req.params.id)
+                }
+            );
         } catch (err) {
             res.status(500).json(err);
         }

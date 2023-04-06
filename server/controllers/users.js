@@ -1,9 +1,18 @@
-import User from '../models/User.js'
+import { getDb } from '../index.js';
+import { ObjectId } from 'mongodb';
+
+const getUsersColelction = () => {
+    return getDb().collection('users');
+}
 
 //READ
 export const getUser = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id)
+        const user = await getUsersColelction().findOne(
+            {
+                _id: new ObjectId(req.params.id)
+            }
+        )
         res.status(200).json(user);
     } catch (err) {
         res.status(500).json(err);
@@ -14,25 +23,41 @@ export const getUser = async (req, res) => {
 export const getAllUsers = async (req, res) => {
     if (req.user.isAdmin) {
         try {
-            const users = await User.find();
+            const users = await getUsersColelction().find().toArray();
             res.status(200).json(users);
         } catch (err) {
             res.status(500).json(err);
         }
     } else {
-        res.status(403).json('Access denied');
+        res.status(403).json({ msg: 'Access denied' });
     }
 };
 
 //UPDATE
 export const updateUser = async (req, res) => {
+    const {
+        firstName,
+        lastName,
+        email,
+        phone,
+        address,
+    } = req.body;
     try {
-        const updatedUser = await User.findByIdAndUpdate(req.params.id, {
-            $set: req.body,
-        }, {
-            new: true,
-        });
-        res.status(200).json(updatedUser);
+        await getFoodsColelction().updateOne(
+            {
+                _id: new ObjectId(req.params.id)
+            },
+            {
+                $set: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                }
+            }
+        );
+        res.status(200).json({ msg: "Updated successfully"});
     } catch (err) {
         res.status(500).json(err);
     }

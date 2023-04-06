@@ -1,13 +1,21 @@
 import express from 'express';
-import { createOrder, getAllOrders } from '../controllers/orders.js';
+import { createOrder, getAllOrders, getOrder, getOrderByUserId, updateOrder, deleteOrder } from '../controllers/orders.js';
 import { verifyToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
-//create
-router.post('/',verifyToken, createOrder);
+//CREATE
+router.post('/', verifyToken, createOrder);
+ 
+//READ 
+router.get('/:id', getOrder);
+router.get('/', verifyToken, getAllOrders);
+router.get('/user/:id', getOrderByUserId);
 
-//read 
-router.get('/',verifyToken, getAllOrders);
+//UPDATE
+router.put('/:id', updateOrder);
+
+//DELETE
+router.delete('/:id', deleteOrder);
 
 export default router;

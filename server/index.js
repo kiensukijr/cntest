@@ -1,5 +1,5 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -9,6 +9,7 @@ import userRoute from './routes/users.js';
 import orderRoute from './routes/orders.js';
 import authRoute from './routes/auth.js';
 import reviewRoute from './routes/reviews.js';
+import reservationRoute from './routes/reservations.js';
 
 //CONFIG
 dotenv.config();
@@ -25,18 +26,30 @@ app.use('/users', userRoute);
 app.use('/foods', foodRoute);
 app.use('/orders', orderRoute);
 app.use('/reviews', reviewRoute);
+app.use('/reservations', reservationRoute);
 
-
-//MONGOOSE SETUP
+//CONNECT DB
 const PORT = process.env.PORT || 6001;
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => {
-    app.listen(PORT, () => console.log(`server port: ${PORT}`));
-
-    // ADD DATA ONE TIME
-
-})
-.catch((error) => console.log(`${error} did not connect`));
+const dbName = 'test';
+let db;
+ 
+export const connectDb = async () => {
+    const client = new MongoClient(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    
+    try {
+        await client.connect();
+        app.listen(PORT, () => console.log(`server port: ${PORT}`));
+        db = client.db(dbName);
+    } catch (err) {
+        console.log(err);
+    }
+}
+ 
+export const getDb = () => {
+    return db;
+}
+ 
+connectDb();
