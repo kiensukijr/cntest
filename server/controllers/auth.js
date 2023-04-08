@@ -28,6 +28,7 @@ export const register = async (req, res) => {
                 phone: phone,
                 address: address,
                 password: passwordHash,
+                order: [],
                 isAdmin: false
             }
         );

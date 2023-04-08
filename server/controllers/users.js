@@ -35,26 +35,13 @@ export const getAllUsers = async (req, res) => {
 
 //UPDATE
 export const updateUser = async (req, res) => {
-    const {
-        firstName,
-        lastName,
-        email,
-        phone,
-        address,
-    } = req.body;
     try {
         await getFoodsColelction().updateOne(
             {
                 _id: new ObjectId(req.params.id)
             },
             {
-                $set: {
-                    firstName: firstName,
-                    lastName: lastName,
-                    email: email,
-                    phone: phone,
-                    address: address,
-                }
+                $set: req.body
             }
         );
         res.status(200).json({ msg: "Updated successfully"});
