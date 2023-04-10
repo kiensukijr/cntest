@@ -4,6 +4,7 @@ import { DeleteOutline } from "@material-ui/icons";
 import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import shirmpImg from '../../pages/images/hero-img-1.svg'
 
 export default function ProductList() {
   const [data, setData] = useState(productRows);
@@ -21,7 +22,7 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <div className="productListItem">
-            <img className="productListImg" src={params.row.img} alt="" />
+            <img className="productListImg" src={shirmpImg} alt="" />
             {params.row.name}
           </div>
         );

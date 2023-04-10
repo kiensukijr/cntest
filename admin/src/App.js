@@ -9,6 +9,8 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Order from "./pages/order/Order";
+import OrderList from "./pages/orderList/OrderList";
 
 function App() {
   return (
@@ -38,6 +40,18 @@ function App() {
           <Route path="/newproduct">
             <NewProduct />
           </Route>
+
+          <Route path="/order">
+            <OrderList />
+          </Route>
+          <Route path="/order/:orderId">
+            <Order />
+          </Route>
+
+       
+
+
+          
         </Switch>
       </div>
     </Router>

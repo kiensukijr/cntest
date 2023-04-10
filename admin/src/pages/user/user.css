@@ -1,15 +1,15 @@
-.user {
+.order {
   flex: 4;
   padding: 20px;
 }
 
-.userTitleContainer {
+.orderTitleContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.userAddButton {
+.orderAddButton {
   width: 80px;
   border: none;
   padding: 5px;
@@ -20,19 +20,19 @@
   font-size: 16px;
 }
 
-.userContainer {
+.orderContainer {
   display: flex;
   margin-top: 20px;
 }
 
-.userShow {
+.orderShow {
   flex: 1;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.userUpdate {
+.orderUpdate {
   flex: 2;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
@@ -40,98 +40,98 @@
   margin-left: 20px;
 }
 
-.userShowTop {
+.orderShowTop {
   display: flex;
   align-items: center;
 }
 
-.userShowImg {
+.orderShowImg {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.userShowTopTitle {
+.orderShowTopTitle {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
 }
 
-.userShowUsername {
+.orderShowordername {
   font-weight: 600;
 }
 
-.userShowUserTitle {
+.orderShoworderTitle {
   font-weight: 300;
 }
 
-.userShowBottom{
+.orderShowBottom{
     margin-top: 20px;
 }
 
-.userShowTitle {
+.orderShowTitle {
   font-size: 14px;
   font-weight: 600;
   color: rgb(175, 170, 170);
 }
 
-.userShowInfo{
+.orderShowInfo{
     display: flex;
     align-items: center;
     margin: 20px 0px;
     color: #444;
 }
 
-.userShowIcon{
+.orderShowIcon{
     font-size: 16px !important;
 }
 
-.userShowInfoTitle{
+.orderShowInfoTitle{
     margin-left: 10px;
 }
 
-.userUpdateTitle{
+.orderUpdateTitle{
     font-size: 24px;
     font-weight: 600;
 }
 
-.userUpdateForm{
+.orderUpdateForm{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.userUpdateItem{
+.orderUpdateItem{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
 }
 
-.userUpdateItem>label{
+.orderUpdateItem>label{
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-.userUpdateInput{
+.orderUpdateInput{
     border: none;
     width: 250px;
     height: 30px;
     border-bottom: 1px solid gray;
 }
 
-.userUpdateRight{
+.orderUpdateRight{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.userUpdateUpload{
+.orderUpdateUpload{
     display: flex;
     align-items: center;
 }
 
-.userUpdateImg{
+.orderUpdateImg{
     width: 100px;
     height: 100px;
     border-radius: 10px;
@@ -139,11 +139,11 @@
     margin-right: 20px;
 }
 
-.userUpdateIcon{
+.orderUpdateIcon{
     cursor: pointer;
 }
 
-.userUpdateButton{
+.orderUpdateButton{
     border-radius: 5px;
     border: none;
     padding: 5px;
