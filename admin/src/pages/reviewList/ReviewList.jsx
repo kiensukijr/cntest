@@ -21,7 +21,7 @@ export default function ReviewList() {
     {
       field: "describe",
       headerName: "Describe",
-      width: 520,
+      width: 521,
     },
    
     {
