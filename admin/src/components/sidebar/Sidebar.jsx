@@ -21,7 +21,7 @@ export default function Sidebar() {
       <div className="sidebarWrapper">
          
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
+          <h3 className="sidebarTitle">Admin Manage</h3>
           <ul className="sidebarList">
             <Link to="/users" className="link">
               <li className="sidebarListItem">
@@ -32,13 +32,13 @@ export default function Sidebar() {
             <Link to="/products" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Products
+                Foods
               </li>
             </Link>
 
            
 
-            <Link to="/order" className="link">
+            <Link to="/orders" className="link">
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Orders
@@ -47,49 +47,34 @@ export default function Sidebar() {
             
             
 
-            <Link to="/review" className="link">
+            <Link to="/reviews" className="link">
               <li className="sidebarListItem">
                 <BarChart className="sidebarIcon" />
                 Reviews
               </li>
+            </Link> </ul>
+
+            <h3 className="sidebarTitle">Create</h3>
+          <ul className="sidebarList">
+            <Link to="/newProduct" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                Create Food
+              </li>
+            </Link>
+            <Link to="/newReview" className="link">
+              <li className="sidebarListItem">
+                <BarChart className="sidebarIcon" />
+                Create Review
+              </li>
             </Link>
           </ul>
         </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Notifications</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <MailOutline className="sidebarIcon" />
-              Mail
-            </li>
-            <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Feedback
-            </li>
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" />
-              Messages
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <WorkOutline className="sidebarIcon" />
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <Report className="sidebarIcon" />
-              Reports
-            </li>
-          </ul>
-        </div>
+       
+       
       </div>
+
+      
     </div>
   );
 }

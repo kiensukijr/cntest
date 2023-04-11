@@ -6,12 +6,25 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import shirmpImg from '../../pages/images/hero-img-1.svg'
 
+{/* <div className="productTitleContainer">
+          <h1 className="productTitle">Edit Product</h1>
+          <Link to="/newProduct">
+            <button className="productAddButton">Create</button>
+          </Link>
+        </div> */}
+
+
 export default function ProductList() {
   const [data, setData] = useState(productRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
+
+
+  // nut create
+  
+
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
@@ -69,5 +82,9 @@ export default function ProductList() {
         checkboxSelection
       />
     </div>
+
+
+
+
   );
 }

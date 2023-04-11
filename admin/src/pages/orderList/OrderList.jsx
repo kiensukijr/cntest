@@ -1,4 +1,4 @@
-import "./orderList.css";
+import "./orderList.css"
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 import { orderRows } from "../../dummyData";
@@ -14,28 +14,20 @@ export default function OrderList() {
   
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
-    {
-      field: "order",
-      headerName: "order",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="orderListorder">
-            <img className="orderListImg" src={params.row.avatar} alt="" />
-            {params.row.ordername}
-          </div>
-        );
-      },
-    },
-    { field: "email", headerName: "Email", width: 200 },
+    
+    { field: "phone", headerName: "Phone Number", width: 200 },
+
+    { field: "address", headerName: "Address", width: 200 },
+    { field: "note", headerName: "Name of Product", width: 200 },
+   
     {
       field: "status",
       headerName: "Status",
       width: 120,
     },
     {
-      field: "transaction",
-      headerName: "Transaction Volume",
+      field: "total",
+      headerName: "Total",
       width: 160,
     },
     {
@@ -48,10 +40,10 @@ export default function OrderList() {
             <Link to={"/order/" + params.row.id}>
               <button className="orderListEdit">Edit</button>
             </Link>
-            <DeleteOutline
+            {/* <DeleteOutline
               className="orderListDelete"
               onClick={() => handleDelete(params.row.id)}
-            />
+            /> */}
           </>
         );
       },
@@ -70,3 +62,4 @@ export default function OrderList() {
     </div>
   );
 }
+

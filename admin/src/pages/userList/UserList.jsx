@@ -14,28 +14,32 @@ export default function UserList() {
   
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
-    {
-      field: "user",
-      headerName: "User",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
-            {params.row.username}
-          </div>
-        );
-      },
-    },
+    { field: "firstName", headerName: "Fist Name", width: 150 },
+    { field: "lastName", headerName: "Last Name", width: 150 },
+
+
+    // {
+    //   field: "user",
+    //   headerName: "User",
+    //   width: 200,
+    //   renderCell: (params) => {
+    //     return (
+    //       <div className="userListUser">
+    //         <img className="userListImg" src={params.row.avatar} alt="" />
+    //         {params.row.username}
+    //       </div>
+    //     );
+    //   },
+    // },
     { field: "email", headerName: "Email", width: 200 },
     {
-      field: "status",
-      headerName: "Status",
-      width: 120,
+      field: "phone",
+      headerName: "Phone Number",
+      width: 180,
     },
     {
-      field: "transaction",
-      headerName: "Transaction Volume",
+      field: "password",
+      headerName: "Password",
       width: 160,
     },
     {
@@ -45,9 +49,9 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
+            {/* <Link to={"/user/" + params.row.id}>
               <button className="userListEdit">Edit</button>
-            </Link>
+            </Link> */}
             <DeleteOutline
               className="userListDelete"
               onClick={() => handleDelete(params.row.id)}

@@ -1,12 +1,12 @@
-import "./orderList.css";
+import "./reviewList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { orderRows } from "../../dummyData";
+import { reviewRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function OrderList() {
-  const [data, setData] = useState(orderRows);
+export default function ReviewList() {
+  const [data, setData] = useState(reviewRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -14,30 +14,16 @@ export default function OrderList() {
   
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
+    { field: "reviewer", headerName: "Reviews", width: 150 },
+
+    
+    { field: "name", headerName: "Name", width: 200 },
     {
-      field: "order",
-      headerName: "order",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="orderListorder">
-            <img className="orderListImg" src={params.row.avatar} alt="" />
-            {params.row.ordername}
-          </div>
-        );
-      },
+      field: "describe",
+      headerName: "Describe",
+      width: 520,
     },
-    { field: "email", headerName: "Email", width: 200 },
-    {
-      field: "status",
-      headerName: "Status",
-      width: 120,
-    },
-    {
-      field: "transaction",
-      headerName: "Transaction Volume",
-      width: 160,
-    },
+   
     {
       field: "action",
       headerName: "Action",
@@ -45,11 +31,11 @@ export default function OrderList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/order/" + params.row.id}>
-              <button className="orderListEdit">Edit</button>
+            <Link to={"/review/" + params.row.id}>
+              <button className="reviewListEdit">Edit</button>
             </Link>
             <DeleteOutline
-              className="orderListDelete"
+              className="reviewListDelete"
               onClick={() => handleDelete(params.row.id)}
             />
           </>
@@ -59,7 +45,7 @@ export default function OrderList() {
   ];
 
   return (
-    <div className="orderList">
+    <div className="reviewList">
       <DataGrid
         rows={data}
         disableSelectionOnClick

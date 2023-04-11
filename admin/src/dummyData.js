@@ -49,6 +49,37 @@ export const userData = [
     },
   ];
 
+
+
+  export const userRows = [
+    {
+      id: 1,
+      firstName : "Tran",
+      lastName : "kien",
+      email: "jon@gmail.com",
+      phone: "03492943852",
+      password: "kien4708",
+    },
+    {
+      id: 2,
+      firstName : "Tran",
+      lastName : "kien",
+      email: "jon@gmail.com",
+      phone: "03492943852",
+      password: "kien4708",
+    },
+    {
+      id: 3,
+      firstName : "Tran",
+      lastName : "kien",
+      email: "jon@gmail.com",
+      phone: "03492943852",
+      password: "kien4708",
+    },
+    
+    
+  ];
+
   export const productData = [
     {
       name: "Jan",
@@ -61,100 +92,6 @@ export const userData = [
     {
       name: "Mar",
       "Sales": 5000,
-    },
-  ];
-
-  export const userRows = [
-    {
-      id: 1,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 2,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 3,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 4,
-      username: "Jon Snow",
-      avatar:
-      
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 5,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 6,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 7,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 8,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 9,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 10,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
     },
   ];
 
@@ -309,12 +246,54 @@ export const userData = [
 
   export const orderRows = [
     {
-      id: 1,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },]
+      id: 2,
+      phone: "0338351996",
+      address : "florida",
+      note : "sasimi is so delicious form japan",
+      status: "delivering",
+      total: "1200",
+    },
+
+    {
+      id: 3,
+      phone: "0338351992",
+      address : "los angles",
+      note : "sasimi is so delicious form korea",
+      status: "pending ",
+      total: "1300",
+    },
+  ]
+
+  export const reiewData = [
+    {
+      name: "Jan",
+      "Active User": 4000,
+    },
+    {
+      name: "Feb",
+      "Active User": 3000,
+    },
+    {
+      name: "Mar",
+      "Active User": 5000,
+    },
+  ]
+
+  export const reviewRows = [
+    {
+      id: 2,
+      name : "review sashimi",
+      reviewer : "charlie puth",
+      describe : "sashimi is so delicious",
+    
+    },
+
+    {
+      id: 3,
+      name : "review sashimi",
+      reviewer : "justin bieber",
+      describe : "sashimi is so delicious",
+      
+    },
+  ]
 

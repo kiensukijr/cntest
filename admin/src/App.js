@@ -10,7 +10,11 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Order from "./pages/order/Order";
-import OrderList from "./pages/orderList/OrderList";
+import OrderList from "./pages/orderList/OrderList";  
+import NewOrder from "./pages/newOrder/NewOrder";
+import ReviewList from "./pages/reviewList/ReviewList";
+import Review from "./pages/review/Review"
+import NewReview from "./pages/newReview/NewReview";
 
 function App() {
   return (
@@ -20,7 +24,7 @@ function App() {
         <Sidebar />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <UserList />
           </Route>
           <Route path="/users">
             <UserList />
@@ -31,6 +35,7 @@ function App() {
           <Route path="/newUser">
             <NewUser />
           </Route>
+
           <Route path="/products">
             <ProductList />
           </Route>
@@ -41,11 +46,24 @@ function App() {
             <NewProduct />
           </Route>
 
-          <Route path="/order">
+          <Route path="/orders">
             <OrderList />
           </Route>
           <Route path="/order/:orderId">
             <Order />
+          </Route>
+          <Route path="/newOrder">
+            <NewOrder />
+          </Route>
+
+          <Route path="/reviews">
+            <ReviewList />
+          </Route>
+          <Route path="/review/:reviewId">
+            <Review />
+          </Route>
+          <Route path="/newReview">
+            <NewReview />
           </Route>
 
        
